@@ -1,0 +1,16 @@
+package com.generation.Farmacia_Bem_Estar.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+
+import com.generation.Farmacia_Bem_Estar.model.Produto;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{
+	
+	public List<Produto> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
+	
+	
+
+}
